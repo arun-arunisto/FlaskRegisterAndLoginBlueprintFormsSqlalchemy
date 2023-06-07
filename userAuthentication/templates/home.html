@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{url_for('user_bp.static', filename='style.css')}}">
+</head>
+<body>
+{% if current_user.is_anonymous %}
+    <div class="heading">
+        <h2>You need to login first</h2>
+        <a href="{{url_for('user_bp.login')}}" type="buttom">Login</a>
+    </div>
+{% else %}
+    <div class="heading">
+        <h2>Welcome <span style="color: green">{{current_user.username}}</span></h2>
+        <a href="{{url_for('user_bp.logout')}}" type="button">Logout</a>
+    </div>
+{% endif %}
+</body>
+</html>

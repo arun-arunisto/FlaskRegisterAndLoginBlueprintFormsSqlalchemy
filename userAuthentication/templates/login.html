@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{{url_for('user_bp.static', filename='style.css')}}">
+</head>
+<body>
+<div class="heading">
+  <h3>Login Page</h3>
+  {{form.hidden_tag()}}
+</div>
+<div class="form">
+    <form method="post">
+        <div class="inputfields">
+            {{form.email(placeholder="email")}}
+            {% for error in form.email.errors %}
+                <p>{{error}}</p>
+            {% endfor %}
+        </div>
+        <div class="inputfields">
+            {{form.password(placeholder="password")}}
+            {% for error in form.password.errors %}
+            <p>{{error}}</p>
+            {% endfor %}
+        </div>
+        <div class="inputfields">
+            {{form.submit()}}
+        </div>
+        {% for error in get_flashed_messages() %}
+            <p>{{error}}</p>
+        {% endfor %}
+    </form>
+    <div class="heading">
+        <h3><a href="{{url_for('user_bp.register')}}">Don't have an account! Register Here!!</a></h3>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.heading {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.heading a {
+    text-decoration: none;
+    color: red;
+}
+
+.form {
+    width: 75%;
+    border: solid red 1px;
+    padding: 30px;
+    margin: 0 auto;
+}
+
+.form .inputfields {
+    margin-top: 15px;
+}
+
+.form .inputfields input[type=text], input[type=password] {
+    width: 300px;
+    height: 30px;
+    color: blue;
+}
+
+.form .inputfields input[type=submit] {
+    width: 150px;
+    height: 30px;
+    color: white;
+    background: blue;
+    border-color: red;
+}
+
+.form .inputfields input[type=submit]:hover {
+    cursor: pointer;
+    color: blue;
+    background: white;
+    border-color: red;
+}
