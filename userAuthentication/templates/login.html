@@ -25,6 +25,7 @@
             {% endfor %}
         </div>
         <div class="inputfields">
+            {{form.csrf_token}}
             {{form.submit()}}
         </div>
         {% for error in get_flashed_messages() %}

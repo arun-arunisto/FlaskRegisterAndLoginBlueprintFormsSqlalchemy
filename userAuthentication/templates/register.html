@@ -37,8 +37,12 @@
             {% endfor %}
         </div>
         <div class="inputfields">
+            {{ form.csrf_token }}
             {{form.submit()}}
         </div>
+        {% for error in get_flashed_messages() %}
+            <p>{{error}}</p>
+        {% endfor %}
     </form>
     <div class="heading">
         <h3><a href="{{url_for('user_bp.login')}}">Already have an account? Login</a></h3>
