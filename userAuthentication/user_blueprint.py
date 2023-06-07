@@ -46,6 +46,7 @@ def login():
                 return redirect(url_for('user_bp.home'))
             flash("Invalid email or password")
         except Exception as e:
+            print(e)
             return redirect(url_for('user_bp.login'))
     return render_template("login.html", form=form)
 
